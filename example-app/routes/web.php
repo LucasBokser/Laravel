@@ -20,10 +20,10 @@ Route::get('/', function () {
     return view('welcome_hello');
 });
 */
-
+/*
 Route::get('/', function () {
     return ('Home page');
-});
+});*/
 /*
 Route::get('/product', function () {
     return ('Liste des produits');
@@ -44,3 +44,4 @@ Route::get('/product',[ProductController::class,'listProduct']);
 Route::get('/product/{id}',[ProductController::class,'product']);
 
 Route::get('/cart',[CartController::class,'cart']);
+

@@ -9,6 +9,6 @@ class CartController extends Controller
 {
     public function cart()
     {
-        return 'panier';
+        return view ('cart');
     }
 }
