@@ -21,6 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-    <b>Hello WorldFrom Laravel v8.X (PHP v7.4.X)</b>
+       <b>Hello WorldFrom Laravel v8.X (PHP v7.4.X)</b>
     </body>
 </html>
