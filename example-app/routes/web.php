@@ -24,22 +24,52 @@ Route::get('/', function () {
 });
 */
 /*
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home/homepage');
 });
-
-Route::get('/products', function () {
-    return view('products/product-list');
-});
-
-Route::get('/products', function () {
-    return view('products/product-details');
-});
-
-Route::get('/cart', function () {
-    return view('cart/cart');
-});
 */
+
+//bières
+
+Route::get('/bières/biquette', function () {
+    return view('bières.biquette');
+});
+
+Route::get('/bières/grizzly', function () {
+    return view('grizzly');
+});
+
+Route::get('/bières/lion', function () {
+    return view('bières.lion');
+});
+
+Route::get('bières/rakoon', function () {
+    return view('bières.rakoon');
+});
+
+
+
+
+//cv
+
+Route::get('/cv/cv-aurel', function () {
+    return view('cv.cv-aurel');
+});
+
+Route::get('/cv/cv-hercule', function () {
+    return view('cv-hercule');
+});
+
+Route::get('/cv/cv-hubert', function () {
+    return view('cv.cv-hubert');
+});
+
+Route::get('cv/cv-lucie', function () {
+    return view('cv.cv-lucie');
+});
+
+
+
 
 Route::get('/',[HomeController::class,'index']);
 
