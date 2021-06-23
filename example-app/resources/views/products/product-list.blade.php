@@ -1,5 +1,6 @@
-@extends('header')
-<b>produit numéro </b>
-
-@extends('footer')
+<html>
+<body>
+<h1>Liste des produits</h1>
+</body>
+</html>
 

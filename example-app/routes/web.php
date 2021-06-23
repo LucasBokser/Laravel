@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,20 +24,20 @@ Route::get('/', function () {
 });
 */
 /*
-Route::get('/', function () {
-    return ('Home page');
-});*/
-/*
-Route::get('/product', function () {
-    return ('Liste des produits');
+Route::get('/home', function () {
+    return view('home/homepage');
 });
 
-Route::get('/product/{id}', function () {
-    return ('Fiche du produit {}');
+Route::get('/products', function () {
+    return view('products/product-list');
+});
+
+Route::get('/products', function () {
+    return view('products/product-details');
 });
 
 Route::get('/cart', function () {
-    return ('Panier');
+    return view('cart/cart');
 });
 */
 
