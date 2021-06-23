@@ -21,3 +21,9 @@
     </style>
 </head>
 <body class="antialiased">
+
+
+@yield('contenu')
+
+</body>
+</html>

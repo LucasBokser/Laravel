@@ -1,10 +1,9 @@
-<html>
-<body>
+@extends('layout')
 
- <h1>Liste des produits {{request('id')}}</h1>
+@section('contenu')
+<h1>Liste des produits {{request('id')}}</h1>
 
-<h1>Liste des produits {{$id}}</h1>
+<h2>Liste des produits {{$id}}</h2>
+@endsection
 
-</body>
-</html>
 

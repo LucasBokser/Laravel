@@ -48,4 +48,3 @@ Route::get('/product',[ProductController::class,'listProduct']);
 Route::get('/product/{id}',[ProductController::class,'product']);
 
 Route::get('/cart',[CartController::class,'cart']);
-
