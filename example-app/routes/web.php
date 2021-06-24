@@ -6,8 +6,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,58 +27,17 @@ Route::get('/', function () {
 });
 */
 
-//bières
 
-Route::get('/bières/biquette', function () {
-    return view('bières.biquette');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/bières/grizzly', function () {
-    return view('grizzly');
-});
+Route::get('/catalogue', [ProductController::class, 'listProduct']);
 
-Route::get('/bières/lion', function () {
-    return view('bières.lion');
-});
+Route::get('/product/{id}', [ProductController::class, 'product']);
 
-Route::get('bières/rakoon', function () {
-    return view('bières.rakoon');
-});
+Route::get('/contact', [CartController::class, 'cart']);
 
+Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);
 
-
-
-//cv
-
-Route::get('/cv/cv-aurel', function () {
-    return view('cv.cv-aurel');
-});
-
-Route::get('/cv/cv-hercule', function () {
-    return view('cv-hercule');
-});
-
-Route::get('/cv/cv-hubert', function () {
-    return view('cv.cv-hubert');
-});
-
-Route::get('cv/cv-lucie', function () {
-    return view('cv.cv-lucie');
-});
-
-
-
-
-Route::get('/',[HomeController::class,'index']);
-
-Route::get('/catalogue',[ProductController::class,'listProduct']);
-
-Route::get('/product/{id}',[ProductController::class,'product']);
-
-Route::get('/cart',[CartController::class,'cart']);
-
-Route::get('/membres',[\App\Http\Controllers\TeamController::class,'ListeTeam']);
-
-Route::get('/membres/{monPrenom}',[\App\Http\Controllers\TeamController::class,'team']);
+Route::get('/membres/{monPrenom}', [\App\Http\Controllers\TeamController::class, 'team']);
 
 

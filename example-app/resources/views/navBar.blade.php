@@ -53,13 +53,13 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li>
-                            <a class="dropdown-item" href="equipe.blade.php">Membres</a>
+                            <a class="dropdown-item" href="membres">Membres</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
                         <li>
-                            <a class="dropdown-item" href="cv-hubert">Hubert</a>
+                            <a class="dropdown-item" href="cv.cv-hubert">Hubert</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="cv-aurel">Aurélien</a>
@@ -73,7 +73,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact">Contact</a>
             </li>
         </ul>
 

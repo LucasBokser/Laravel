@@ -1,4 +1,7 @@
 @extends('layout')
+@section('cssOptionnal')
+    <link rel="stylesheet" href="catalogue.css" />
+@endsection
 @section('contenu')
   <!-- carrousel -->
   <div class="container-md">

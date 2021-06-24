@@ -35,15 +35,15 @@
                     <tr>
                         <th scope="col" class="except">La Biquette</th>
                         <th scope="col">
-                            Bouteille <br />
+                            Bouteille <br/>
                             (33 cL)
                         </th>
                         <th scope="col">
-                            Bouteille <br />
+                            Bouteille <br/>
                             (75 cL)
                         </th>
                         <th scope="col">
-                            PerfectDraft <br />
+                            PerfectDraft <br/>
                             (6L)
                         </th>
                     </tr>

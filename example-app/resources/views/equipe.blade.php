@@ -1,4 +1,7 @@
 @extends('layout')
+@section('cssOptionnal')
+    <link rel="stylesheet" href="/equipe.css" />
+@endsection
 @section('contenu')
     <!-- description équipe -->
     <div class="container-fluid">
@@ -17,7 +20,7 @@
 
 
 
-                <a class="lienh" href="cv/cv-hubert.blade.php"><img src="photos\Photo Hubert.jpg" alt="oss"></a>
+                <a class="lienh" href="cv/cv-hubert.blade.php"><img src="{{asset('photos\Photo Hubert.jpg')}}" alt="oss"></a>
 
             </div>
 
@@ -31,7 +34,7 @@
 
 
 
-                <a class="liena" href="cv-aurel.html"><img src="photos\Photo Aurélien.jpg" alt="orel"></a>
+                <a class="liena" href="cv-aurel.html"><img src="{{asset('photos\Photo Aurélien.jpg')}}" alt="orel"></a>
 
             </div>
 
@@ -44,7 +47,7 @@
 
 
 
-                <a class="lienL" href="cv/cv-lucie.blade.php"> <img src="photos\Photo Lucie.jpg" alt="lulu"></a>
+                <a class="lienL" href="cv/cv-lucie.blade.php"> <img src="{{asset('photos\Photo Lucie.jpg')}}" alt="lulu"></a>
 
             </div>
             <div class="col-sm">
@@ -56,7 +59,7 @@
 
 
 
-                <a class="lienH" href="cv-hercule.html"><img src="photos\Photo Hercules.jpg" alt="herc"></a>
+                <a class="lienH" href="cv-hercule.html"><img src="{{asset('photos\Photo Hercules.jpg')}}" alt="herc"></a>
 
 
             </div>

@@ -1,108 +1,76 @@
 @extends('layout')
+@section('cssOptionnal')
+    <link rel="stylesheet" href="{{asset("equipe.css")}}" />
+@endsection
 @section('contenu')
-    <!-- fin nav bar -->
+    <!-- description équipe -->
+    <div class="container-fluid">
+        <div class="row">
+            <h1>La brasserie Noé !</h1>
 
-    <main>
 
-        <!-- debut presentation cv -->
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h2>Hubert:</h2>
+                <span class="T">
+                    <p>Commercial & responsable relation hors territoire français</p>
+                </span>
 
-        <div id="hercule" class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-sm-auto">
-                    <img src="{{asset(".\photos\Photo Hercules.jpg")}}" class="rounded-circle" alt="hercule" />
-                </div>
-                <div class="col justify-content-center align-item-center">
-                    <h2>Hercule fils de zeus</h2>
-                </div>
-                <div class="col col-sm-0"></div>
+
+
+
+                <a class="lienh" href="cv-hubert.html"><img src="{{asset("photos\Photo Hubert.jpg")}}" alt="oss"></a>
+
+            </div>
+
+            <div class="col-sm">
+                <h2>Aurélien:</h2>
+                <span class="T">
+                    <p>Concepteur de goût &préparateur de mixture</p>
+                </span>
+
+
+
+
+
+                <a class="liena" href="cv-aurel.html"><img src="{{asset("photos\Photo Aurélien.jpg")}}" alt="orel"></a>
+
+            </div>
+
+
+            <div class="col-sm">
+                <h2>Lucie:</h2>
+                <span class="T">
+                    <p>Chercheuse de saveur & responsable mousse</p>
+                </span>
+
+
+
+                <a class="lienL" href="cv-lucie.html"> <img src="{{asset("photos\Photo Lucie.jpg")}}" alt="lulu"></a>
+
+            </div>
+            <div class="col-sm">
+                <h2>Hercule:</h2>
+                <span class="T">
+                    <p>Technicien de surface & responsable équipement</p>
+                </span>
+
+
+
+
+                <a class="lienH" href="cv-hercule.html"><img src="{{asset("photos\Photo Hercules.jpg")}}" alt="herc"></a>
+
+
             </div>
         </div>
-        <!-- fin presentation cv  -->
-
-        <!-- tableau formation -->
-        <div class="container" id="tableaux">
-            <div id="tableau" class="row justify-content-center">
-                <div class="col-8 gy-5">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th colspan="1">Formation</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>official God</td>
-                            <td>God Academy</td>
-                            <td>-672</td>
-                        </tr>
-                        <tr>
-                            <td>Demi-dieu</td>
-                            <td>Le campus divin</td>
-                            <td>-724</td>
-                        </tr>
-                        <tr>
-                            <td>Heros</td>
-                            <td>Ecole des Heros</td>
-                            <td>-800</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- fin tableau formation -->
+    </div>
 
 
-                <!-- tableux experiences -->
-                <div class="col-8 gy-5">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th colspan="1">Experiences</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Sluggies</td>
-                            <td>Mannequin pour slip</td>
-                            <td>1978-2008</td>
-                        </tr>
-                        <tr>
-                            <td>Auto-entrepreneur</td>
-                            <td>Mercenaire</td>
-                            <td>-649-1977</td>
-                        </tr>
-                        <tr>
-                            <td>Olympe</td>
-                            <td>Demi-dieu</td>
-                            <td>???--649</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <!--  fin tableau experiences -->
 
-        <!-- liste hob et comp -->
-        <div class="container-fluid">
-            <div class="row row-md-cent">
-                <div class="col-lg-4 col-md-2 gy-5">
-                    <h1><u>Hobbies</u></h1>
-                    <li>Cultirisme</li>
-                    <li>castagne</li>
-                    <li>Le crochet</li>
-                </div>
-                <div class="col-lg-4 col-md-0 col offset-lg-4 offset-md-2 gy-5">
-                    <h1><u>Competences</u></h1>
-                    <ol>
-                        <li>tir a l'arc</li>
-                        <li>Combats a main nue</li>
-                        <li>Sauvetage de demoisselle en detresse</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <!-- fin liste -->
+    <!--javascript  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+            integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+            crossorigin="anonymous"></script>
 
-    </main>
 @endsection
