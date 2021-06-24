@@ -1,6 +1,8 @@
 @extends('layout')
 @section('contenu')
     <!-- Container-bière -->
+
+
     <div class="container-fluid">
         <h1 class="titre-biere">La Biquette</h1>
         <div class="row" id="biere">
