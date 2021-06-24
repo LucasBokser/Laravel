@@ -1,17 +1,20 @@
 @extends('layout')
+@section('cssOptionnal')
+    <link rel="stylesheet" href={{asset("biere.css")}} />
+@endsection
 @section('contenu')
     <!-- Container-bière -->
 
 
     <div class="container-fluid">
-        <h1 class="titre-biere">La Biquette</h1>
+        <h1 class="titre-biere">{{$produit->name}}</h1>
         <div class="row" id="biere">
 
             <!-- Col1-image-bière -->
             <div class="col-12 col-lg-4 d-flex justify-content-center" id="col1">
                 <img
                     class="photo-bieres"
-                    src="{{asset("photos/photo-biquette.png")}}"
+                    src="{{asset($produit->picture)}}"
                     alt="photo-biquette"
                 />
             </div>
@@ -20,11 +23,7 @@
             <div class="col-12 col-lg-8" id="col2">
           <span class="description">
             <p>
-              Bière blanche du type weizenbier, c’est-à-dire avec de vrais
-              morceaux de Bavière… Ses montagnes, ses jambons fumés et sa bière
-              qui coule à flots autant que la pluie. Cette bière blanche vous
-              fera voyager dans le pays des chaussettes trop hautes et des
-              plumes sur le chapeau.
+              {{$produit->description}}
             </p>
           </span>
                 <span class="specificites">

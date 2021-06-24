@@ -8,7 +8,8 @@ class TeamController
 {
     public function listeTeam()
     {
-        return view('equipe');
+        $products = DB::select('select * from products');
+        return view('equipe',['monPrenom' => $prenom]);
     }
 
     public function team($prenom)

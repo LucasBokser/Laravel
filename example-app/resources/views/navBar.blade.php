@@ -29,16 +29,16 @@
                             <hr class="dropdown-divider" />
                         </li>
                         <li>
-                            <a class="dropdown-item" href="bières/biquette">La Biquette</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/product/5">La Biquette</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="bières/lion">La Lion</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/product/7">La Lion</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="bières/rakoon">La Rakoon</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/product/8">La Rakoon</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="bières/grizzly">La Grizzly</a>
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/product/6">La Grizzly</a>
                         </li>
                     </ul>
                 </div>
