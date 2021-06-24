@@ -36,8 +36,12 @@ Route::get('/product/{id}', [ProductController::class, 'product']);
 
 Route::get('/contact', [CartController::class, 'cart']);
 
+
+
+
+/*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);
 
 Route::get('/membres/{monPrenom}', [\App\Http\Controllers\TeamController::class, 'team']);
-
+*/
 
