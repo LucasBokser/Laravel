@@ -8,12 +8,12 @@ class ProductController extends Controller
 {
     public function listProduct()
     {
-        return view('products.product-list');
+        return view('product-list');
     }
 
     public function product($id)
     {
-        return view('products.product-details',['identification' => $id]);
+        return view('bières.product-detail',['identification' => $id]);
     }
 }
 

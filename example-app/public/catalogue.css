@@ -34,7 +34,7 @@ h5 {
   background-color: black;
 }
 body {
-  background-image: url(../photos/thumb-1920-370799.jpg);
+  background-image: url(/photos/thumb-1920-370799.jpg);
 }
 
 .row {
