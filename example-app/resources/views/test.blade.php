@@ -2,9 +2,8 @@
 
 @section('contenu')
 
-    @foreach($product as $produit)
-    <p>{{$produit->name}}</p>
-    <p>{{$produit->price}}</p>
-    @endforeach
+
+    <p>{{$product->name}}</p>
+    <p>{{$product->price}}</p>
 
 @endsection
