@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\BackOfficeController;
 
 
 /*
@@ -21,11 +22,11 @@ Route::get('/', function () {
     return view('welcome_hello');
 });
 */
-/*
-Route::get('/', function () {
-    return view('home/homepage');
+
+Route::get('/layout', function () {
+    return view('Layout');
 });
-*/
+
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -41,6 +42,8 @@ Route::get('/catalogue', [ProductController::class, 'productsByName']);
 Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
 Route::get('/test/{id}', [ProductController::class, 'showProduct']);
+
+Route::resource('backoffice', BackOfficeController::class);
 
 /*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);
