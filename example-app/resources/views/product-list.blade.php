@@ -4,7 +4,7 @@
     <link href="{{ asset('styles/catalogue.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
-@section('content')
+@section('contenu')
 
     <!-- carrousel -->
     <div class="container-md">
@@ -23,6 +23,7 @@
 
                         @foreach ($products as $product)
 
+
                             <button type="button" data-bs-target="#carouselExampleCaptions"
                                     data-bs-slide-to="{{ $loop->index }}" class="active" aria-current="true"
                                     aria-label="Slide {{ $loop->iteration }}"></button>
@@ -31,6 +32,7 @@
 
                     </div>
                     <div class="carousel-inner">
+
                         @foreach ($products as $product)
 
                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">

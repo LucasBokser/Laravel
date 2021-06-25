@@ -11,8 +11,8 @@ class ProductController extends Controller
     public function listProduct()
     {
         $productData = DB::select('select * from products');
-        //  dd($products);
-        return view('product-list', ['product' => $productData]);
+          //dd($productData);
+        return view('product-list', ['products' => $productData]);
     }
 
 
