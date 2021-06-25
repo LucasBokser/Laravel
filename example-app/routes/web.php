@@ -36,7 +36,7 @@ Route::get('/product/{id}', [ProductController::class, 'product']);
 
 Route::get('/contact', [CartController::class, 'cart']);
 
-
+Route::get('/catalogue', [ProductController::class, 'productsByName']);
 
 
 /*

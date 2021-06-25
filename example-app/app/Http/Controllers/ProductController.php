@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 
 use Illuminate\Support\Facades\DB;
 
@@ -25,6 +26,12 @@ class ProductController extends Controller
         return view('bières.product-detail', ['product' => $productData[0]]);
 
 
+    }
+
+    public function productsByName (){
+        $productsOrder= Product::all()
+            ->sortBy('name');
+        return view('product-list', ['products' => $productsOrder]);
     }
 }
 
