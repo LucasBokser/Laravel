@@ -38,6 +38,7 @@ Route::get('/contact', [CartController::class, 'cart']);
 
 Route::get('/catalogue', [ProductController::class, 'productsByName']);
 
+Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
 /*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);

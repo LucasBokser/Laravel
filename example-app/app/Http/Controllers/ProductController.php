@@ -12,10 +12,9 @@ class ProductController extends Controller
     public function listProduct()
     {
         $productData = DB::select('select * from products');
-          //dd($productData);
+        //dd($productData);
         return view('product-list', ['products' => $productData]);
     }
-
 
 
     public function product($id)
@@ -28,11 +27,17 @@ class ProductController extends Controller
 
     }
 
-    public function productsByName (){
-        $productsOrder= Product::all()
+    public function productsByName()
+    {
+        $productsOrderByName = Product::all()
             ->sortBy('name');
-        return view('product-list', ['products' => $productsOrder]);
+        return view('product-list', ['products' => $productsOrderByName]);
+    }
+
+    public function productsByPrice()
+    {
+        $productsOrderByPrice = Product::all()
+            ->sortBy('price');
+        return view('product-list', ['products' => $productsOrderByPrice]);
     }
 }
-
-
