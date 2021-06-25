@@ -40,6 +40,8 @@ Route::get('/catalogue', [ProductController::class, 'productsByName']);
 
 Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
+Route::get('/test/{id}', [ProductController::class, 'showProduct']);
+
 /*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);
 

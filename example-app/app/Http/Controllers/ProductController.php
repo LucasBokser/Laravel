@@ -40,4 +40,22 @@ class ProductController extends Controller
             ->sortBy('price');
         return view('product-list', ['products' => $productsOrderByPrice]);
     }
+
+/* pour prix decroissant
+
+    public function productsByPrice()
+    {
+        $productsOrderByPrice = Product::all()
+            ->sortByDesc('price');
+        return view('product-list', ['products' => $productsOrderByPrice]);
+    }
+*/
+
+
+    public function showProduct($id)
+    {
+        $showProduct = Product::find($id);
+        //dd($showProduct);
+        return view('test', ['product' => $showProduct]);
+    }
 }
