@@ -36,7 +36,9 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $products = Product::all();
+
+        $products->validate([
 
             'name'=>'required|max:255',
             'price'=>'required|integer|gt:0',
@@ -45,13 +47,8 @@ class BackOfficeController extends Controller
             'available'=>'required',
             'category-id'=>'required'
         ]);
-        $newitem = Product::create($request->all());
 
-//        $newitem->name=$request->input('name');
-//        $newitem->save();
-//        $lastid=DB::getPdo()->lastInsertId();
-
-        return back()->with("succes","produit créer");
+        return redirect()->route('product.store',[$products]);
     }
 
 
@@ -64,7 +61,7 @@ class BackOfficeController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('product.show');
     }
 
     /**
@@ -75,7 +72,7 @@ class BackOfficeController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('product.edit');
     }
 
     /**
@@ -98,6 +95,19 @@ class BackOfficeController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $products = Product::all();
+
+        $products->validate([
+
+            'name'=>'required|max:255',
+            'price'=>'required|integer|gt:0',
+            'weight'=>'required|integer|min:1',
+            'quantity'=>'required|integer|min:0',
+            'available'=>'required',
+            'category-id'=>'required'
+        ]);
+
+        return redirect()->route('product.store',[$products]);
     }
 }

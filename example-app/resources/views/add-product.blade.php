@@ -1,14 +1,15 @@
 @extends('layout')
 @section('cssOptionnal')
-    <link rel="stylesheet" href="{{ asset('catalogue.css') }}" />
+    <link rel="stylesheet" href="{{ asset('catalogue.css') }}"/>
 @section('contenu')
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Formulaire de création d'un produit</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="/user" method="post">
+            <form class="" action="/backoffice/store" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">name</label>
@@ -41,7 +42,9 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" method="get" action="{{route('product.store')}}">Submit</button>
+
+
             </form>
         </div>
     </div>

@@ -25,7 +25,7 @@
             <li class="list-group-item">Catégorie: {{$product->categories_id}}</li>
 
         </ul>
-        <form class="form-inline my-3 my-lg-0" id="ajouter">
+        <form class="form-inline my-3 my-lg-0" id="ajouter" method="get" action="{{route('product.create')}}">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn-ajouter">
                 Ajouter
             </button>
@@ -35,7 +35,7 @@
                     Modifier
                 </button>
 
-                <form class="form-inline my-3 my-lg-0" id="supprimerr">
+                <form class="form-inline my-3 my-lg-0" id="supprimer" >
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn-supprimer">
                         Supprimer
                     </button>
