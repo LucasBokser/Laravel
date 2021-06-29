@@ -39,6 +39,7 @@ class ProductController extends Controller
     {
         $productsOrderByPrice = Product::all()
             ->sortBy('price');
+
         return view('product-list', ['products' => $productsOrderByPrice]);
     }
 

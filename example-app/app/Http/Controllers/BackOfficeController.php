@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Product;
 class BackOfficeController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class BackOfficeController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::orderBy('name')->get();
+       // dd($products);
+        return view('backoffice',['products' => $products]);
     }
 
     /**
@@ -23,7 +25,7 @@ class BackOfficeController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-product');
     }
 
     /**
@@ -34,8 +36,25 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'name'=>'required|max:255',
+            'price'=>'required|integer|gt:0',
+            'weight'=>'required|integer|min:1',
+            'quantity'=>'required|integer|min:0',
+            'available'=>'required',
+            'category-id'=>'required'
+        ]);
+        $newitem = Product::create($request->all());
+
+//        $newitem->name=$request->input('name');
+//        $newitem->save();
+//        $lastid=DB::getPdo()->lastInsertId();
+
+        return back()->with("succes","produit créer");
     }
+
+
 
     /**
      * Display the specified resource.
@@ -68,7 +87,7 @@ class BackOfficeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

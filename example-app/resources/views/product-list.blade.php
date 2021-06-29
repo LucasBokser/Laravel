@@ -21,6 +21,7 @@
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
 
+
                         @foreach ($products as $product)
 
 
@@ -53,7 +54,14 @@
 
                         @endforeach
 
-
+                            <ul>
+                                <li>{{$product->name}}</li>
+                                @if ($product->price >= 500)
+                                    <li>Prix réduit: {{$product->price * 0.5 + 1}} €</li>
+                                @else   <li>{{$product->price}} €</li>
+                                @endif
+                                <li>{{$product->description}}</li>
+                            </ul>
 
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"

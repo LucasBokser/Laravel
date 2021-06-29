@@ -77,6 +77,10 @@
             </li>
         </ul>
 
+
+        <a href="{{route('product.index')}}" > Cliquez  </a>
+
+
         <!-- Boutton-panier -->
         <form class="form-inline my-3 my-lg-0" id="panier">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btn-panier">

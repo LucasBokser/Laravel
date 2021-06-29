@@ -43,7 +43,17 @@ Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
 Route::get('/test/{id}', [ProductController::class, 'showProduct']);
 
-Route::resource('backoffice', BackOfficeController::class);
+
+
+
+
+Route::resource('backoffice/product', BackOfficeController::class);
+
+
+
+
+
+
 
 /*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);
