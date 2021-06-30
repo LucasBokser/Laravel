@@ -117,15 +117,20 @@ class BackOfficeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product)
     {
+        // delete
+        $destroy = Product::find($product);
+        $destroy->delete();
 
-       // $products = Product::destroy($id);
+        // redirect
+        return redirect()->route('product.index',['product' => $product]);
+       // $product = Product::destroy($product);
 
-//        return view('backoffice', ['product' => $product]);
-       // return redirect()->route('product.index');
+      //  return view('backoffice', ['product' => $product]);
+      //  return redirect()->route('product.index');
     }
 }
