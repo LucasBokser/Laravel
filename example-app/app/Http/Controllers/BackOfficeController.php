@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use phpDocumentor\Reflection\Types\Object_;
+use PhpParser\Node\Expr\Cast\Int_;
 
 class BackOfficeController extends Controller
 {
@@ -14,7 +16,7 @@ class BackOfficeController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('ID')->get();
+        $products = Product::orderByDesc('ID')->get();
         // dd($products);
         return view('backoffice', ['products' => $products]);
     }
@@ -48,7 +50,7 @@ class BackOfficeController extends Controller
         $products->category_id=$request->input('category_id');
 
         $products->save();
-        ;
+
 
         return redirect()->route('product.index');
     }
@@ -57,12 +59,12 @@ class BackOfficeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        return view('product.create');
+       return view('show',['product' => $product]);
     }
 
     /**
@@ -73,19 +75,43 @@ class BackOfficeController extends Controller
      */
     public function edit($id)
     {
-        return view('product.edit');
+       // return view('update-product');
+        if ($product = Product::find($id)) {
+            return view('update-product', ['product' => $product]);
+        } else {
+            abort(404);
+        }
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Product $product)
     {
+       // $product = Product::find($id);
 
+      /*  $products->name = $request->name;
+        $products->price = $request->price;
+        $products->weight = $request->weight;
+        $products->quantity = $request->quantity;
+        $products->available = $request->available;
+        $products->category_id = $request->category_id;*/
+
+        $product->name=$request->input('name');
+        $product->price=$request->input('price');
+        $product->weight=$request->input('weight');
+        $product->quantity=$request->input('quantity');
+        $product->available=$request->input('available');
+        $product->category_id=$request->input('category_id');
+
+        $product->save();
+
+
+        return redirect()->route('product.index',['product' => $product]);
     }
 
     /**
@@ -97,18 +123,9 @@ class BackOfficeController extends Controller
     public function destroy($id)
     {
 
-        $products = Product::all();
+       // $products = Product::destroy($id);
 
-        $products->validate([
-
-            'name' => 'required|max:255',
-            'price' => 'required|integer|gt:0',
-            'weight' => 'required|integer|min:1',
-            'quantity' => 'required|integer|min:0',
-            'available' => 'required',
-            'category-id' => 'required'
-        ]);
-
-        return redirect()->route('product.store', [$products]);
+//        return view('backoffice', ['product' => $product]);
+       // return redirect()->route('product.index');
     }
 }
