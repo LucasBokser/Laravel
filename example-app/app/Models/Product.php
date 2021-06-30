@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $products = ["name","price","category-id"];
+    //protected $products = ["name","price","weight","quantity","available","category_id"];
+    const UPDATED_AT=NULL;
+    const CREATED_AT=NULL;
 
 }

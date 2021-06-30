@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+
 class BackOfficeController extends Controller
 {
     /**
@@ -13,9 +14,9 @@ class BackOfficeController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('name')->get();
-       // dd($products);
-        return view('backoffice',['products' => $products]);
+        $products = Product::orderBy('ID')->get();
+        // dd($products);
+        return view('backoffice', ['products' => $products]);
     }
 
     /**
@@ -31,43 +32,43 @@ class BackOfficeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $products = Product::all();
+        $products = new Product;
 
-        $products->validate([
 
-            'name'=>'required|max:255',
-            'price'=>'required|integer|gt:0',
-            'weight'=>'required|integer|min:1',
-            'quantity'=>'required|integer|min:0',
-            'available'=>'required',
-            'category-id'=>'required'
-        ]);
+        $products->name=$request->input('name');
+        $products->price=$request->input('price');
+        $products->weight=$request->input('weight');
+        $products->quantity=$request->input('quantity');
+        $products->available=$request->input('available');
+        $products->category_id=$request->input('category_id');
 
-        return redirect()->route('product.store',[$products]);
+        $products->save();
+        ;
+
+        return redirect()->route('product.index');
     }
-
 
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return view('product.show');
+        return view('product.create');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,8 +79,8 @@ class BackOfficeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +91,7 @@ class BackOfficeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -100,14 +101,14 @@ class BackOfficeController extends Controller
 
         $products->validate([
 
-            'name'=>'required|max:255',
-            'price'=>'required|integer|gt:0',
-            'weight'=>'required|integer|min:1',
-            'quantity'=>'required|integer|min:0',
-            'available'=>'required',
-            'category-id'=>'required'
+            'name' => 'required|max:255',
+            'price' => 'required|integer|gt:0',
+            'weight' => 'required|integer|min:1',
+            'quantity' => 'required|integer|min:0',
+            'available' => 'required',
+            'category-id' => 'required'
         ]);
 
-        return redirect()->route('product.store',[$products]);
+        return redirect()->route('product.store', [$products]);
     }
 }
