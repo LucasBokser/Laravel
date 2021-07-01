@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use phpDocumentor\Reflection\Types\Object_;
@@ -14,11 +15,14 @@ class BackOfficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id=null)
     {
-        $products = Product::orderByDesc('ID')->get();
+$query = $id ? Category::whereId($id)->firstOrfail()->products() : Product::query();
+$products=$query->withTrashed()->oldest('name')->pagnate(5);
+     //   $products = Product::orderByDesc('ID')->get();
         // dd($products);
-        return view('backoffice', ['products' => $products]);
+        $categories=Category::all();
+        return view('backoffice', compact('products','categories','id'));
     }
 
     /**

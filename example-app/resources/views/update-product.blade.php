@@ -3,7 +3,13 @@
     <link rel="stylesheet" href="{{ asset('catalogue.css') }}"/>
 @section('contenu')
 
-
+<?php/*
+if($product->id){
+    $options=['method'=>'put','url'=>action('BackOfficeController@update',$product)];
+}else{
+    $options=['method'=>'post','url'=>action('BackOfficeController@store')];
+}
+*/?>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title" style="color:white;">Formulaire de modification d'un produit</h2>

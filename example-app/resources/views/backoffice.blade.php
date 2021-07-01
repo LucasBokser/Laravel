@@ -25,6 +25,20 @@
 
             </ul>
 
+            <div class="select">
+                <select onchange="window.location.href = this.value">
+                    <option value="{{ route('product.index') }}" @unless($id) selected @endunless>Toutes catégories</option>
+                    @foreach($categories as $category)
+                        <option value="{{ route('product.category', $category->id) }}" {{ $id == $category->slug ? 'selected' : '' }}>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+
+
+
+
+
 
             <a href="{{route('product.show',$product->id)}}"/> Voir  </a>
 

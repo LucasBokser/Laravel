@@ -41,7 +41,8 @@ Route::get('/catalogue', [ProductController::class, 'productsByName']);
 
 Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
-Route::get('/test/{id}', [ProductController::class, 'showProduct']);
+
+
 
 
 
@@ -49,7 +50,7 @@ Route::get('/test/{id}', [ProductController::class, 'showProduct']);
 
 Route::resource('backoffice/product', BackOfficeController::class);
 
-
+Route::get('backoffice/product/category/{id}/product', [BackOfficeController::class, 'index'])->name('product.category');
 
 
 
