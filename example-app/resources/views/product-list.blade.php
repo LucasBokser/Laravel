@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cssOptionnal')
-    <link rel="stylesheet" href="{{ asset('catalogue.css') }}" />
+    <link rel="stylesheet" href="{{ asset('catalogue.css') }}"/>
 @endsection
 
 @section('contenu')
@@ -11,8 +11,9 @@
         <div class="row">
             <div class="col-lg-4 sm-12 text">
                 <p>
-                    Envie d'une bonne bière brassée selon les anciennes traditions remontant à l'époque lointaine du déluge?
-                    <br />
+                    Envie d'une bonne bière brassée selon les anciennes traditions remontant à l'époque lointaine du
+                    déluge?
+                    <br/>
                     N'hésitez plus et faites votre choix parmis notre collection !
                 </p>
             </div>
@@ -20,7 +21,6 @@
             <div class="col-lg-4 sm-12">
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-
 
                         @foreach ($products as $product)
 
@@ -32,10 +32,8 @@
                         @endforeach
 
 
-
                     </div>
                     <div class="carousel-inner">
-
 
 
                         @foreach ($products as $product)
@@ -43,7 +41,7 @@
                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
 
                                 <a href="/product/{{ $product->id }}">
-                                    <img src="{{ $product->picture }}" class="d-block w-100" alt="..." /></a>
+                                    <img src="{{ $product->picture }}" class="d-block w-100" alt="..."/></a>
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{{ $product->name }}</h5>
                                     <div id="name">
@@ -54,14 +52,15 @@
 
                         @endforeach
 
-                            <ul>
-                                <li>{{$product->name}}</li>
-                                @if ($product->price >= 500)
-                                    <li>Prix réduit: {{$product->price * 0.5 + 1}} €</li>
-                                @else   <li>{{$product->price}} €</li>
-                                @endif
-                                <li>{{$product->description}}</li>
-                            </ul>
+                        <ul>
+                            <li>{{$product->name}}</li>
+                            @if ($product->price >= 500)
+                                <li>Prix réduit: {{$product->price * 0.5 + 1}} €</li>
+                            @else
+                                <li>{{$product->price}} €</li>
+                            @endif
+                            <li>{{$product->description}}</li>
+                        </ul>
 
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -80,12 +79,12 @@
                         </button>
 
 
-
                     </div>
                 </div>
                 <div class="col-lg-4 sm-12 text">
                     <p>
-                        Que ce soit de la brune de caractère ou alors une douce blanche nous somme sur que vous trouverez
+                        Que ce soit de la brune de caractère ou alors une douce blanche nous somme sur que vous
+                        trouverez
                         votre bonheur choissisez celle-qui vous plaira et bonne dégustation!!
                     </p>
                 </div>

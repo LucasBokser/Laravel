@@ -22,7 +22,7 @@ class ProductController extends Controller
         $productData = DB::select('select * from products where id = :id', ['id' => $id]);
         //dd($product[0]->name);
 
-        return view('bières.product-detail', ['product' => $productData[0]]);
+        return view('bieres.product-detail', ['product' => $productData[0]]);
     }
 
 

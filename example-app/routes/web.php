@@ -44,10 +44,6 @@ Route::get('/catalogue', [ProductController::class, 'productsByPrice']);
 
 
 
-
-
-
-
 Route::resource('backoffice/product', BackOfficeController::class);
 
 Route::get('backoffice/product/category/{id}/product', [BackOfficeController::class, 'index'])->name('product.category');

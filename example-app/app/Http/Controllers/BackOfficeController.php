@@ -15,14 +15,11 @@ class BackOfficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id=null)
+    public function index()
     {
-$query = $id ? Category::whereId($id)->firstOrfail()->products() : Product::query();
-$products=$query->withTrashed()->oldest('name')->pagnate(5);
-     //   $products = Product::orderByDesc('ID')->get();
+        $products = Product::orderByDesc('ID')->get();
         // dd($products);
-        $categories=Category::all();
-        return view('backoffice', compact('products','categories','id'));
+        return view('backoffice', ['products' => $products]);
     }
 
     /**
@@ -68,6 +65,7 @@ $products=$query->withTrashed()->oldest('name')->pagnate(5);
      */
     public function show(Product $product)
     {
+       // dd($product->category());
        return view('show',['product' => $product]);
     }
 
