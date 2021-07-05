@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Customer;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customer = Customer::all();
-        // dd($products);
+         //dd($customer);
         return view('backoffice.Customer.index', ['customer' => $customer]);
     }
 
@@ -54,7 +55,7 @@ class CustomerController extends Controller
         $customer = Customer::findOrFail($id);
 //        dd($customer);
 //
-        return view('customer.customer', ['customer' =>$customer]);
+        return view('backoffice.Customer.show', ['customer' =>$customer]);
     }
 
     /**

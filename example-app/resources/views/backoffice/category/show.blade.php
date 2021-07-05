@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Catégorie {{$categorie->id}}</h2>
+                <h2 style="color: white">Catégorie {{$categorie->id}}</h2>
             </div>
 
         </div>

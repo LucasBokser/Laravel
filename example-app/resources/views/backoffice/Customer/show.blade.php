@@ -18,7 +18,7 @@
 
         <div class="card-body">
 
-            <p class="card-text" style="color: white">Description </p>
+            <p class="card-text" style="color: white">Détails du client </p>
         </div>
         <ul class="list-group list-group-flush">
 
