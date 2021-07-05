@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use phpDocumentor\Reflection\Types\Object_;
 use PhpParser\Node\Expr\Cast\Int_;
+use Illuminate\Support\Facades\Validator;
+
 
 class BackOfficeController extends Controller
 {
@@ -31,7 +33,6 @@ class BackOfficeController extends Controller
     {
         return view('add-product');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -40,19 +41,37 @@ class BackOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        $products = new Product;
 
 
-        $products->name=$request->input('name');
-        $products->price=$request->input('price');
-        $products->weight=$request->input('weight');
-        $products->quantity=$request->input('quantity');
-        $products->available=$request->input('available');
-        $products->category_id=$request->input('category_id');
+        $validator = Validator::make($request->all(), [
 
-        $products->save();
+            'name' => 'required',
+            'price' => 'required|numeric|min:0',
+            'weight' => 'required',
+            'quantity' => 'required|min:0',
+            'available' => 'required',
+            'category_id' => 'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/backoffice/product/create')
+                ->withErrors($validator);
+        }
+        else{
+            $products=new Product;
+
+            $products->name=$request->input('name');
+            $products->price=$request->input('price');
+            $products->weight=$request->input('weight');
+            $products->quantity=$request->input('quantity');
+            $products->available=$request->input('available');
+            $products->category_id=$request->input('category_id');
+
+            $products->save();
 
 
+        }
         return redirect()->route('product.index');
     }
 

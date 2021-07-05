@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BackOfficeController;
-
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +48,7 @@ Route::resource('backoffice/product', BackOfficeController::class);
 
 Route::get('backoffice/product/category/{id}/product', [BackOfficeController::class, 'index'])->name('product.category');
 
+Route::resource('backoffice/category', CategoryController::class);
 
 
 

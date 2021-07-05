@@ -21,7 +21,7 @@
                         <li class="list-group-item">Poids en kg: {{$product->weight}}</li>
                         <li class="list-group-item">Quantité: {{$product->quantity}}</li>
                         <li class="list-group-item">Disponibilité: {{$product->available}}</li>
-                        <li class="list-group-item">Catégorie: {{$product->category_id}}</li>
+                        <li class="list-group-item">Catégorie: {{$product->category->name}}</li>
 
                 </ul>
             </div>

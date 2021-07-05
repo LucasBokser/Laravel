@@ -10,7 +10,7 @@
             Ajouter
         </button>
     </form>
-    @foreach ($category->products as $product)
+    @foreach ($products as $product)
 
         <div class="card" style="width: 18rem;">
 
