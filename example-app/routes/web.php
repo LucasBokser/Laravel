@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,8 @@ Route::get('backoffice/product/category/{id}/product', [BackOfficeController::cl
 Route::resource('backoffice/category', CategoryController::class);
 
 Route::resource('backoffice/order', OrderController::class);
+
+Route::resource('backoffice/customer', CustomerController::class);
 
 /*
 Route::get('/membres', [\App\Http\Controllers\TeamController::class, 'ListeTeam']);

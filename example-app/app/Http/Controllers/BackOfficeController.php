@@ -45,10 +45,10 @@ class BackOfficeController extends Controller
 
         $validator = Validator::make($request->all(), [
 
-            'name' => 'required',
+            'name' => 'required|unique:products|max 255',
             'price' => 'required|numeric|min:0',
-            'weight' => 'required',
-            'quantity' => 'required|min:0',
+            'weight' => 'required|numeric|min:0',
+            'quantity' => 'required|numeric|min:0',
             'available' => 'required',
             'category_id' => 'required',
 
