@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Catégorie {{$categorie->id}}</h2>
+                <h2>Commandes {{$commande->id}}</h2>
             </div>
 
         </div>
@@ -23,15 +23,15 @@
         <ul class="list-group list-group-flush">
 
 
-            <li class="list-group-item">ID: {{$categorie->id}} </li>
-            <li class="list-group-item">Nom: {{$categorie->name}}</li>
-            <li class="list-group-item">Description: {{$categorie->description}}</li>
+            <li class="list-group-item">ID: {{$commande->id}} </li>
+            <li class="list-group-item">Date: {{$commande->date}}</li>
+            <li class="list-group-item">Nombre: {{$commande->number}}</li>
 
         </ul>
     </div>
     <br>
     <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('category.index') }}"> Back</a>
+        <a class="btn btn-primary" href="{{ route('order.index') }}"> Back</a>
     </div>
 
 @endsection

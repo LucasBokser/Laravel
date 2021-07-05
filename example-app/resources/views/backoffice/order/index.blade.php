@@ -11,19 +11,20 @@
                 {{ session()->get('success') }}
             </div><br/>
         @endif
-        <h2 class="card-title" color="white">Catégories</h2>
+        <h2 class="card-title" color="white">Orders</h2>
         <a class="btn btn-info" href="{{ route('product.index') }}">Liste produits</a>
-        @foreach($categorie as $category)
+        @foreach($commande as $order)
             <div class="card-body">
-                <p class="card-text" style="color: white">{{$category->description}}</p><br>
-                <strong>Les produits de la catégorie:{{$category->id}}</strong>
-                @foreach($category->products as $product)
+                <p class="card-text" style="color: white">{{$order->description}}</p><br>
+                <strong>Les produits de la commande:{{$order->id}}</strong>
+                    @foreach($order->products as $product)
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"> id: {{$product->id}} <br> nom:{{$product->name}} </li>
                     </ul>
-                @endforeach
-                <a class="btn btn-info" href="{{ route('category.show',$category->id) }}">Description
-                    catégorie</a><br>
-    @endforeach
+                    @endforeach
+                    <a class="btn btn-info" href="{{ route('order.show',$order->id) }}">Description
+                    commande
+                    </a><br>
+        @endforeach
 
 @stop
